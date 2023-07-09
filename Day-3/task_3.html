@@ -17,9 +17,10 @@ xhr.onload=function (){
     if(xhr.status==200){
         let response=JSON.parse(xhr.responseText);
         for(let i=0;i<response.length;i++){
-            console.log(i+".country_Name :",response[i].name.common);
+            console.log(i+".Country_Name :",response[i].name.common);
             console.log("Region :",response[i].region);
-            console.log("population :",response[i].population);
+            console.log("Population :",response[i].population);
+            console.log("")
             
         }
     }
