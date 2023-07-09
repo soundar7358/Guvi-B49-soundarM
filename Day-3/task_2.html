@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>XML Http request example</title>
+    </head>
+    <body>
+        <script>
+            // creating object for new XMLHttpRequest 
+let xhr=new XMLHttpRequest();
+//Defining Http method and url 
+let method="GET";
+let url="https://restcountries.com/v3.1/all";
+//Opening the XMLHttpRequest
+xhr.open(method,url,true);
+//set Headers(Optional)
+xhr.setRequestHeader('content-Type','application/json');
+xhr.onload=function (){
+    if(xhr.status==200){
+        let response=JSON.parse(xhr.responseText);
+        for(let i=0;i<response.length;i++){
+            console.log(response[i].flag);
+        }
+    }
+};
+xhr.send();
+        </script>
+    </body>
+</html>
