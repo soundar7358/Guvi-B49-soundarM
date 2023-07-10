@@ -5,28 +5,28 @@
     <body>
         <script>
             // creating object for new XMLHttpRequest 
-let xhr=new XMLHttpRequest();
-//Defining Http method and url 
-let method="GET";
-let url="https://restcountries.com/v3.1/all";
-//Opening the XMLHttpRequest
-xhr.open(method,url,true);
-//set Headers(Optional)
-xhr.setRequestHeader('content-Type','application/json');
-xhr.onload=function (){
-    if(xhr.status==200){
-        let response=JSON.parse(xhr.responseText);
-        for(let i=0;i<response.length;i++){
-            console.log(i+".Country_Name :",response[i].name.common);
-            console.log("Region :",response[i].region);
-            console.log("Sub-Region :",response[i].subregion);
-            console.log("Population :",response[i].population);
-            console.log("")
-            
-        }
-    }
-};
-xhr.send();
+            let xhr=new XMLHttpRequest();
+            //Defining Http method and url 
+            let method="GET";
+            let url="https://restcountries.com/v3.1/all";
+            //Opening the XMLHttpRequest
+            xhr.open(method,url,true);
+            //set Headers(Optional)
+            xhr.setRequestHeader('content-Type','application/json');
+            xhr.onload=function (){
+                if(xhr.status==200){
+                    let response=JSON.parse(xhr.responseText);
+                    for(let i=0;i<response.length;i++){
+                        console.log(i+1+".Country_Name :",response[i].name.common);
+                        console.log("Region :",response[i].region);
+                        console.log("Sub-Region :",response[i].subregion);
+                        console.log("Population :",response[i].population);
+                        console.log("")
+                        
+                    }
+                }
+            };
+            xhr.send();
         </script>
     </body>
 </html>
