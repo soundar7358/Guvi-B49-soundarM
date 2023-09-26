@@ -1,11 +1,11 @@
 myResume={
-    "basics_Info": {
+    "Personal_Info": {
       "name": "SOUNDAR M",
       "email": "soundar7358@gamil.com",
       "phone": 7358471023,
       "degree": "M.Sc(cs)",
       "location": {
-        "address": "2,kgs,kattur village.",
+        "address": "2,KGS street,kattur village",
         "postalCode": 601203,
         "city": "Chennai",
         "state": "Tamilnadu",
@@ -19,10 +19,7 @@ myResume={
     },
     "work": [
       {
-        "company": "Inkosys",
-        "position": "software engineer",
-        "startDate": "-",
-        "endDate": "-",
+        "Experience":"Nill"
       },
     ],
     "education": [
@@ -40,6 +37,12 @@ myResume={
         "name": "HTML,CSS,Javascript,bootstrap,reactJs,Expressa and Npdejs and mongoDB",
         "level": "beginner",
       }
+    ],
+    "projects":[
+	{
+	   "project_1":"Web scraping Bot using python",
+	   "project_2":"Medical privacy records using block chain technology"
+	}
     ],
     "languages": [
       {
