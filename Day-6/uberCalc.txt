@@ -1,0 +1,23 @@
+class UberPriceCalculator {
+    constructor(baseFare, costPerMile, costPerMinute) {
+      this.baseFare = baseFare;
+      this.costPerMile = costPerMile;
+      this.costPerMinute = costPerMinute;
+    }
+  
+    calculatePrice(distanceMiles, durationMinutes) {
+      const distanceCost = this.costPerMile * distanceMiles;
+      const durationCost = this.costPerMinute * durationMinutes;
+      const totalPrice = this.baseFare + distanceCost + durationCost;
+      return totalPrice;
+    }
+  }
+  
+  const calculator = new UberPriceCalculator(2.0, 1.5, 0.25); 
+  
+  const distance = 5; // 5 miles
+  const duration = 15; // 15 minutes
+  
+  const totalPrice = calculator.calculatePrice(distance, duration);
+  console.log(`Estimated Uber Price: ${totalPrice.toFixed(2)}`);
+  
