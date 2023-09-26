@@ -1,0 +1,54 @@
+const jsonData = {
+  name: "soundar",
+  age: 23,
+  city: "Chennai"
+};
+
+//for loop
+
+for (let key in jsonData) {
+  if (jsonData.hasOwnProperty(key)) {
+    const value = jsonData[key];
+    console.log(`${key}: ${value}`);
+  }
+}
+
+//for in lop
+
+for (let key in jsonData) {
+  const value = jsonData[key];
+  console.log(`${key}: ${value}`);
+}
+
+
+--------------------------------------------------
+//for of Loop
+
+const jsonArray = [
+  { name: "soundar", age: 23, city: "Thiruvallur" },
+  { name: "Manikandan Albalagan", age: 32, city: "Chennai" },
+];
+
+for (const obj of jsonArray) {
+  for (let key in obj) {
+    const value = obj[key];
+    console.log(`${key}: ${value}`);
+  }
+}
+
+----------------------------------------------------
+//forEach loop
+
+const jsonArray = [
+  { name: "soundar", age: 23, city: "Thiruvallur" },
+  { name: "Manikandan Albalagan", age: 32, city: "Chennai" },
+];
+
+jsonArray.forEach((obj) => {
+  for (let key in obj) {
+    const value = obj[key];
+    console.log(`${key}: ${value}`);
+  }
+});
+
+

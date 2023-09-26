@@ -1,0 +1,55 @@
+myResume={
+    "basics_Info": {
+      "name": "SOUNDAR M",
+      "email": "soundar7358@gamil.com",
+      "phone": 7358471023,
+      "degree": "M.Sc(cs)",
+      "location": {
+        "address": "2,kgs,kattur village.",
+        "postalCode": 601203,
+        "city": "Chennai",
+        "state": "Tamilnadu",
+        "country": "India"
+      },
+       "profiles": [
+        {
+          "linkedIn": "www.linkedin.com/in/soundar-m-6047b4256",
+        }
+      ]
+    },
+    "work": [
+      {
+        "company": "Inkosys",
+        "position": "software engineer",
+        "startDate": "-",
+        "endDate": "-",
+      },
+    ],
+    "education": [
+      {
+        "institution": "S.C.P.JAIN COLLEGE",
+	"University" : "University of Madras",
+        "department": "M.S.c(cs)",
+        "studyType": "fulltime",
+        "year of passedOut:2023,
+        "percentage":"85%"
+      }
+    ],
+    "skills": [
+      {
+        "name": "HTML,CSS,Javascript,bootstrap,reactJs,Expressa and Npdejs and mongoDB",
+        "level": "beginner",
+      }
+    ],
+    "languages": [
+      {
+        "language": "Tamil,Enlish",
+      }
+    ],
+    "interests": [
+      {
+        "name": "writting,Book Reading",
+      }
+    ]
+  }
+  
