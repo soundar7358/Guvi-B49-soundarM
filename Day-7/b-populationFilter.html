@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>XMLHttpRequest Example</title>
+  </head>
+  <body>
+    <script>
+      var xhr = new XMLHttpRequest();
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      xhr.open(method, url);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+
+          // Use the filter method to filter countries with populations below 200,000
+          var filteredCountries = response.filter((country)=> {
+            return country.population < 200000;
+          });
+
+          // Extract and print the names of the filtered countries
+          var filteredCountryNames = filteredCountries.map((country)=>{
+            return country.name.common;
+          });
+
+          console.log(filteredCountryNames);
+        } else {
+          console.log("Request failed", xhr.status);
+        }
+      };
+
+      xhr.send();
+    </script>
+  </body>
+</html>

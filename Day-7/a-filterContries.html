@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>XMLHttpRequest Example</title>
+  </head>
+  <body>
+        <script>
+
+       var xhr = new XMLHttpRequest();
+            var method = "GET";
+            var url = "https://restcountries.com/v3.1/all";
+
+            xhr.open(method, url);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+               
+                var response = JSON.parse(xhr.responseText);
+                
+                    for (var i = 0; i < response.length; i++) {
+    
+                      let country = (response[i].continents).filter((continents) => 
+                      { 
+                      if(continents === "Asia"){
+                          console.log(response[i].name.common);
+                      }
+
+                      }
+                       ); 
+                     }                    
+                    }
+                 else {
+                console.log("Request Failed", xhr.status);
+                }
+            };
+
+            xhr.send();
+
+        </script>
+
+  </body>
+</html>

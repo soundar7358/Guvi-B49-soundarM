@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>XMLHttpRequest Example</title>
+  </head>
+  <body>
+    <script>
+      var xhr = new XMLHttpRequest();
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      xhr.open(method, url);
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          
+          // Extract an array of population values from the response
+          var populationArray = response.map(country => country.population);
+          
+          // Use reduce to calculate the total population
+          var totalPopulation = populationArray.reduce((totalpop, currentpop) => totalpop + currentpop, 0);
+          
+          console.log("Total Population: " + totalPopulation);
+        } else {
+          console.log("Request failed", xhr.status);
+        }
+      };
+
+      xhr.send();
+    </script>
+  </body>
+</html>

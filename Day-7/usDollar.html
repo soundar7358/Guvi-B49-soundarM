@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>XMLHttpRequest Example</title>
+  </head>
+  <body>
+    <script>
+      // Create a new XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      // Define HTTP method and URL
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+      // Open the request
+      xhr.open(method, url);
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          // Request was successful
+          var countriesDetails = JSON.parse(xhr.responseText);
+          var usdCountries = [];
+
+          for (var i = 0; i < countriesDetails.length; i++) {
+            if (
+              countriesDetails[i].currencies !== undefined &&
+              "USD" in countriesDetails[i].currencies
+            ) {
+              usdCountries.push(countriesDetails[i].name.common);
+            }
+          }
+
+          // Log the names of countries that use USD as currency
+          console.log("Countries using USD as currency:");
+          usdCountries.forEach(function (countryName) {
+            console.log(countryName);
+          });
+        } else {
+          // Request failed
+          console.log("Request failed", xhr.status);
+        }
+      };
+
+      // Send the request
+      xhr.send();
+    </script>
+  </body>
+</html>
